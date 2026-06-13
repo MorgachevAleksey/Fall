@@ -22,6 +22,8 @@ dependencies {
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+
+    //implementation("org.springframework.boot:spring-boot-starter-web") //Поднять сервер
 }
 
 tasks.withType<Test> {
