@@ -10,14 +10,8 @@ import java.math.BigDecimal;
 @RequestMapping("/api/v1/deposits")  //Адрес эндпоинта
 public class DepositController {
 
-    @PostMapping("/calculate")  //POST-метод принимает Request возвращает Response
+    @PostMapping("/calculate")       //POST-метод принимает Request возвращает Response
     public CalculationResponse calculate (@RequestBody CalculationRequest request) {
-        return new CalculationResponse(
-                BigDecimal.ZERO,
-                BigDecimal.ZERO,
-                BigDecimal.ZERO,
-                BigDecimal.ZERO
-                //FIXME пока что заглушка
-        );
+        return calculate (request);
     }
 }
