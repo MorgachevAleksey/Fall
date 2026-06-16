@@ -5,10 +5,11 @@ REST API принимает параметры депозита, считает 
 
 ---
 
-**Текущий прогресс:** 
-- готовы DTO-контракты API `CalculationRequest`, `CalculationResponse`, `CapitalizationType`
-- создан скелет контроллера `DepositController` с заглушкой на эндпоинте `POST /api/v1/deposits/calculate`
-- подготовлен пустой сервисный слой `DepositCalculationService` для бизнес-логики расчёта.
+**Текущий прогресс:**
+- готовы DTO-контракты API: `CalculationRequest`, `CalculationResponse`, `CapitalisatyonType`
+- реализован контроллер `DepositController` с эндпоинтом `POST /api/v1/deposits/calculate` (constructor injection → service)
+- реализован сервис `DepositCalculationService`: сложный процент с помесячной капитализацией, расчёт процентов, НДФЛ 13%, `netAmount`
+- расчёты на `BigDecimal` с отдельной точностью для промежуточных вычислений и итоговых сумм (`RoundingMode.HALF_UP`)
 
 ---
 
