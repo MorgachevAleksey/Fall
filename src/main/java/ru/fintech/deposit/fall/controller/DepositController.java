@@ -1,5 +1,6 @@
 package ru.fintech.deposit.fall.controller;
 
+import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
 import ru.fintech.deposit.fall.dto.CalculationRequest;
 import ru.fintech.deposit.fall.dto.CalculationResponse;
@@ -17,7 +18,7 @@ public class DepositController {
     }
 
     @PostMapping("/calculate")       //POST-метод принимает Request возвращает Response
-    public CalculationResponse calculate (@RequestBody CalculationRequest request) {
+    public CalculationResponse calculate (@Valid @RequestBody CalculationRequest request) { //!!!Без @Valid все валидирующие аннотации в реквесте игнорируются!
         return calculationService.calculate(request);
     }
 }

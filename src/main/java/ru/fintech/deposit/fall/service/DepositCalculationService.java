@@ -11,7 +11,7 @@ import java.math.RoundingMode;
 public class DepositCalculationService {
 
     //Наловговая ставка
-    private static final BigDecimal TAX_RATE = new BigDecimal("0.13"); //Обязатель из string
+    private static final BigDecimal TAX_RATE = new BigDecimal("0.13"); //Обязательно из string
     //Точность расчета
     private static final int CALCULATION_SCALE = 10;
     //Копейки
@@ -20,7 +20,7 @@ public class DepositCalculationService {
     private static final int ONE_HUNDRED = 100;
 
     //Метод получает на вход DTO request
-    public CalculationResponse calculate (CalculationRequest request) {
+    public CalculationResponse calculate(CalculationRequest request) {
         //Первоначальный взнос
         BigDecimal principal = request.principal(); //Геттер record по умолчанию
         //Годовая ставка
@@ -36,7 +36,7 @@ public class DepositCalculationService {
         BigDecimal multiplier = BigDecimal.ONE.add(monthlyRate);
         //Вся формула
         BigDecimal totalAmount = principal;
-        for (int i = 0; i < termMonths; i++){
+        for (int i = 0; i < termMonths; i++) {
             totalAmount = totalAmount.multiply(multiplier).setScale(CALCULATION_SCALE, RoundingMode.HALF_UP);
         }
         //Округление результата до копеек
