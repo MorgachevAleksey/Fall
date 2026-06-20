@@ -1,4 +1,4 @@
-package ru.fintech.deposit.fall.dto;
+package ru.fintech.deposit.fall.dto.response;
 
 import java.math.BigDecimal;
 

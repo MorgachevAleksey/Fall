@@ -2,8 +2,8 @@ package ru.fintech.deposit.fall.controller;
 
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;
-import ru.fintech.deposit.fall.dto.CalculationRequest;
-import ru.fintech.deposit.fall.dto.CalculationResponse;
+import ru.fintech.deposit.fall.dto.request.CalculationRequest;
+import ru.fintech.deposit.fall.dto.response.CalculationResponse;
 import ru.fintech.deposit.fall.service.DepositCalculationService;
 
 @RestController                         //Controller + ResponsableBodt

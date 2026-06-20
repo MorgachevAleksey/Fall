@@ -1,8 +1,8 @@
 package ru.fintech.deposit.fall.service;
 
 import org.springframework.stereotype.Service;
-import ru.fintech.deposit.fall.dto.CalculationRequest;
-import ru.fintech.deposit.fall.dto.CalculationResponse;
+import ru.fintech.deposit.fall.dto.request.CalculationRequest;
+import ru.fintech.deposit.fall.dto.response.CalculationResponse;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
