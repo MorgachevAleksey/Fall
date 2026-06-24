@@ -20,7 +20,7 @@ public class GlobalExceptionHandler {
                 .getFieldErrors() //Список (List) ошибок по полям
                 .stream() //Поток, идеоматичный выбор, в отличие от цикла
                 .map(error -> error.getField() + ":" + error.getDefaultMessage()) //Лямбда-выржаение для каждой ошибки (элемента списка)
-                .findFirst() //Взять из потока первую ошибку, обернуть в Optional и вернуть
+                .findFirst() //Взять из потока ПЕРВУЮ ошибку, обернуть в Optional и вернуть
                 .orElse("VALIDATION FAILED"); //Нужен если контейнер ошибок пуст (это невозможно если уж поймана ошибка валидации), но требуется для findFrist(возвращает Optional) для обработки null
 
         ErrorResponse error = new ErrorResponse("VALIDATION_ERROR",message, LocalDateTime.now());
@@ -28,10 +28,10 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(error);
     }
 
-    //Общий обработчик
+    //Общий обработчик, если упадет ошибка другого типа
     @ExceptionHandler(Exception.class)
     public ResponseEntity<ErrorResponse> handleGeneric (Exception ex){
-        ErrorResponse error = new ErrorResponse("ITERNAL_ERROR", "An unexpected error occurred", LocalDateTime.now()); //Безопасность через неинформативность
+        ErrorResponse error = new ErrorResponse("INTERNAL_ERROR", "An unexpected error occurred", LocalDateTime.now()); //Безопасность через неинформативность
 
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(error);
     }

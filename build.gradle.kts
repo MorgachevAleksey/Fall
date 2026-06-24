@@ -24,6 +24,8 @@ dependencies {
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
 
     implementation("org.springframework.boot:spring-boot-starter-validation") //Зависимость для валидации: Jakarta Validation API + Hibernate Validator
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa") //Зависимость для работы с БД
+    runtimeOnly("org.postgresql:postgresql") //Подключение postgreSQL при запуске
     //implementation("org.springframework.boot:spring-boot-starter-web") //Поднять сервер
 }
 
