@@ -20,7 +20,8 @@ public record CalculationRequest (            //поля final
         Integer termMonths,                    //Integer чтобы был null иначе, пустое поле превратит в null
                                               //Частота начисления
                                               @NotNull
-                                              CapitalisatyonType capitalisatyonType//Перечисление для типобезопасности (String с мусором пошел бы дальше)
+                                              CapitalizationType capitalizatyonType
+//Перечисление для типобезопасности (String с мусором пошел бы дальше)
 ){
 
 }

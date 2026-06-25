@@ -1,6 +1,6 @@
 package ru.fintech.deposit.fall.dto.request;
 
-public enum CapitalisatyonType {
+public enum CapitalizationType {
     MONTHLY,
     QUARTERLY,
     YEARLY
